@@ -29,10 +29,12 @@ If you have questions, comments, or concerns about _AP Stats in R_, please feel 
 
 ### Table of Contents/Progress Checklist
 
+Each sub-section of a chapter has a tutorial document and also a downloadable RMarkdown (.rmd) file that you can open in R. If you do not have R installed, please see the tutorial [here](https://techvidvan.com/tutorials/install-r/). Please install BOTH R and RStudio as it will make your life significantly easier!
+
 1. Chapter 1: Exploring Data
 	1. Analyzing Categorical Data
 		1. Conditional Counts & Total Counts (Done)
-		2. Frequency Tables **<-- I am here**
+		2. Frequency Tables ([tutorial](ch1/1.1.a.html)/[rmd](ch1/1.1.a.rmd) **<-- I am here**
 		3. Pie Charts & Bar Charts
 		4. Segmented Bar Charts
 	2. Graphical Displays of Quantitative Data
