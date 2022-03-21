@@ -1,4 +1,4 @@
-## Welcome to **AP Stats in R**! 
+## Welcome to _AP Stats in R_! 
 
 This site is my attempt at providing a resource for former, current, and future teachers and students of AP Statistics to learn R. 
 
