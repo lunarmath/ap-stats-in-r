@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Welcome to **AP Stats in R**! 
 
-You can use the [editor on GitHub](https://github.com/lunarmath/ap-stats-in-r/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This site is my attempt at providing a resource for former, current, and future teachers and students of AP Statistics to learn R. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Throughout the different tutorials, I will show you how to use R to do the skills taught in the AP Statistics curriculum. Eventually, I may also add some other content. 
 
-### Markdown
+### Organization
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This site is organized according to the chapters of _The Practice of Statistics, 4th Ed._ by Daren S. Starnes, Dan Yates, and David S. Moore. I don't use any actual content from the book, but I have organized it the same way in the hopes that that helps you understand how everything fits together.
 
-```markdown
-Syntax highlighted code block
+### Style
 
-# Header 1
-## Header 2
-### Header 3
+The tutorial documents will include explanations of how things work, but also blocks of code like the following: 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```r
+#first we calculate the average
+average = (1+2+3+4+5)/5
+#then we print it out
+average
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+I'll do my best to break down these code segments so you know exactly what R is doing with different functions and operations.
 
-### Jekyll Themes
+### About the Author
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lunarmath/ap-stats-in-r/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+My name is Peter Moon; I am a former AP Statistics student, a former AP Statistics teacher, and a current PhD student in Mathematics Education at University of Maryland, College Park. If you are curious about the other work I do, feel free to check out my university website [here](https://terpconnect.umd.edu/~pmoon/ 'Peter's university website') 
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you have questions, comments, or concerns about _AP Stats in R_, please feel free to reach out to me at my university email account, pmoon (at) umd (dot) edu.
