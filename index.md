@@ -33,7 +33,7 @@ Each sub-section of a chapter has a tutorial document and also a downloadable RM
 
 1. Chapter 1: Exploring Data
 	1. Analyzing Categorical Data
-		1. Conditional Counts & Total Counts ([tutorial](ch1/1.1.a.html)/[rmd](ch1/1.1.a.rmd)
+		1. Conditional Counts & Total Counts ([tutorial](ch1/1.1.a.html)/[rmd](ch1/1.1.a.rmd))
 		2. Frequency Tables **<-- I am here**
 		3. Pie Charts & Bar Charts
 		4. Segmented Bar Charts
