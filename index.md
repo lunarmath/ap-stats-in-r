@@ -26,3 +26,35 @@ I'll do my best to break down these code segments so you know exactly what R is 
 My name is Peter Moon; I am a former AP Statistics student, a former AP Statistics teacher, and a current PhD student in Mathematics Education at University of Maryland, College Park. If you are curious about the other work I do, feel free to check out my university website [here](https://terpconnect.umd.edu/~pmoon/ 'Peter's university website') 
 
 If you have questions, comments, or concerns about _AP Stats in R_, please feel free to reach out to me at my university email account, pmoon (at) umd (dot) edu.
+
+### Table of Contents/Progress Checklist
+
+1. Chapter 1: Exploring Data
+	1. Analyzing Categorical Data
+		1. Conditional Counts & Total Counts (Done)
+		2. Frequency Tables **<-- I am here**
+		3. Pie Charts & Bar Charts
+		4. Segmented Bar Charts
+	2. Graphical Displays of Quantitative Data
+	3. Numerical Summaries of Quantitative Data
+2. Chapter 2: Modeling Distributions of Data
+	1. Describing Location in a Distribution
+	2. Normal Distributions
+3. Chapter 3: Describing Relationships
+	1. Scatterplots & Correlation
+	2. Least-Squares Regression
+8. Chapter 8: Confidence Intervals
+	1. Estimating a Population Proportion
+	2. Estimating a Population Mean
+9. Chapter 9: Significance Testing
+	1. Testing a Population Proportion
+	2. Testing a Population Mean
+10. Chapter 10: Comparing Two Populations or Groups
+	1. Comparing Two Proportions
+	2. Comparing Two Means
+11. Chapter 11: Chi-Square and Inference for Categorical Distributions
+	1. Chi-Square Goodness-of-Fit Tests
+	2. Inference for Relationships
+12. Chapter 12: More Regression Skills
+	1. Inference for Linear Regression
+	2. Transforming to Achieve Linearity
