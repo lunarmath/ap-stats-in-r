@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 1.1 Analyzing Categorical Data
 
-### a. Frequency Tables
+### b. Frequency Tables
 
 Download the .rmd file, which you can run yourself in your installation of R, [here](1.1.b.rmd).
 
