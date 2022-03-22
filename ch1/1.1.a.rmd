@@ -1,14 +1,20 @@
 ---
 title: "1.1 Analyzing Categorical Data"
-author: "Peter Moon"
-output: html_document
+author: "Tutorial by Peter Moon"
+output: 
+  md_document:
+      variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## 1.1 Analyzing Categorical Data
+
 ### a. Total and Conditional Counts
+
+Download the .rmd file, which you can run yourself in your installation of R, [here](1.1.a.rmd).
 
 We'll start with some basic skills, like counting the number of observations in a dataset.
 

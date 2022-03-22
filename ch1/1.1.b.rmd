@@ -1,0 +1,142 @@
+---
+title: "1.1 Analyzing Categorical Data"
+author: "Tutorial by Peter Moon"
+output: 
+  md_document:
+      variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1.1 Analyzing Categorical Data
+
+### a. Frequency Tables
+
+Download the .rmd file, which you can run yourself in your installation of R, [here](1.1.b.rmd).
+
+In this tutorial, we're going to review how to make frequency tables in R. We'll make two kinds of frequency tables -- a one-way table (which we already looked at in [the previous tutorial](1.1.a.md)) and a two-way table, which will be much more useful.
+
+For this tutorial, we'll create a dataset of Maryland colleges & universities. We'll put in a little more information than we need -- maybe we can reuse this dataset later! 
+
+```{r, echo=TRUE, include=TRUE}
+#importing the data
+maryland.college.df = data.frame(
+  name = c("Capitol College", "Notre Dame of Maryland", "Goucher College", "Hood College", "Johns Hopkins University", "Loyola University Maryland", "Maryland Institute College of Art", "McDaniel College", "Morgan State University", "Mount Saint Mary's University", "National Labor College", "Saint John's College-Annapolis", "Saint Mary's College of Maryland", "Saint Mary's Seminary & University", "Stevenson University", "United States Naval Academy", "Bowie State University", "Coppin State University", "Frostburg State University", "Salisbury University", "Towson University", "University of Baltimore", "University of Maryland-Baltimore", "University of Maryland-Baltimore County", "University of Maryland-College Park", "University of Maryland-Eastern Shore", "University of Maryland-University College", "Washington Adventist University", "Washington College"),
+  type = c("Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Private", "Federal", "Public", "Public", "Public", "Public", "Public", "Public", "Public", "Public", "Public", "Public", "Public", "Private", "Private"),
+  size.undergrad = c(441, 1230, 1449, 1387, 6251, 4004, 1778, 1692, 6252, 1741, 1364, 443, 1819, 294, 3847, 4576, 4368, 4000, 4704, 8004, 18779, 3526, 746, 11136, 26658, 3531, 26740, 1011, 1483),
+  tuition.instate = c(22176, 33100, 40558, 34120, 47060, 44255, 42390, 38350, 7378, 36021, 9528, 47826, 14874, NA, 28980, NA, 6971, 5076, 7982, 8560, 8342, 7838, 9680, 10068, 9427, 7287, 6552, 21395, 42592),
+  tuition.outstate = c(22176, 33100, 40558, 34120, 47060, 44255, 42390, 38350, 16862, 36021, 9528, 47826, 28674, NA,  28980, NA, 17538, 10010, 19274, 16906, 20020, 16288, 31210, 21642, 29720, 16331, 12336, 21395, 42592)
+)
+```
+
+This is a significantly more complicated dataframe than what we used last time! It also took a long time to type out to set up. Don't worry -- in the future, we'll be importing datasets from files rather than typing it all out, but I wanted you to see that you always have the option to type the numbers in manually.
+
+Let's have a look at this dataframe:
+
+```{r}
+maryland.college.df
+```
+
+The first thing that we can do is look at the distribution of type of college using a **one-way frequency table**. Many states might have two categories here -- Maryland has 3, because the Naval Academy is a _federal_ college rather than _public_. 
+
+```{r}
+table(maryland.college.df$type)
+```
+
+This is a pretty good starting table as it presents the frequency of each level of the categorical variable `type`. However, it doesn't give us some of the things we're used to seeing in tables from AP Statistics: for example, it doesn't give us a total number of observations. We could calculate this ourselves without too much trouble, but it's also possible to show this (and a heap of other information) automatically using an R package called `epiDisplay`. 
+
+_R note: R can use functions from downloadable code packages. When you want to use a function from a package, you have to first install it (if you haven't already done so) and then load its library when you want to use it. 
+
+The code below will install the `epiDisplay` package, but it is currently "commented out" because it has the `#` symbol in front of it. Just remove the `#` and run the chunk to install the `epiDisplay` package!
+
+```{r}
+#install.packages('epiDisplay')
+```
+
+You should only need to run the above code once. The chunk below will use a function within `epiDisplay` called `tab1` that will create a much more detailed table: 
+
+```{r}
+library(epiDisplay)
+tab1(maryland.college.df$type, graph=FALSE, cum.percent = FALSE)
+```
+
+Neat! Now we have a table that shows us a total for our `type` variable and also gives us percentages for each category. 
+
+You'll notice that I included the `maryland.college.df$type` variable as an input argument to `tab1()`, but also included two other arguments: `graph=FALSE` and `cum.percent=FALSE`. 
+
+`graph=FALSE` prevents `tab1()` from printing out a bar chart along with its table. You can add a bar chart simply by changing this argument to `graph=TRUE`. 
+
+Similarly, we can add cumulative percentages across categories by changing `cum.percent=TRUE`. This isn't super meaningful in this case, but let's look at what it adds: 
+
+```{r}
+library(epiDisplay)
+tab1(maryland.college.df$type, graph=FALSE, cum.percent = TRUE)
+```
+
+As you can see, `cum.percent=TRUE` adds the cumulative percentage of all observations from all the `type` categories listed thus far. 
+
+We can also modify the table to be in decreasing order by frequency by adding an argument, `sort.group = "decreasing"`. 
+
+```{r}
+library(epiDisplay)
+tab1(maryland.college.df$type, graph=FALSE, cum.percent = TRUE, sort.group="decreasing")
+```
+
+This simply reorders the table so that `Private`, the largest category within `type`, is first, followed by `Public`, the second-largest. 
+
+Next, we're going to look at creating a **two-way frequency table**. Before we do this, though, we're going to create a new variable -- `size.category` -- which equals `"Large"` if the school has more than 10,000 undergraduates and `"Small"` if the school has fewer than 10,000 undergraduates. 
+
+This is a good chance to see how you can add a variable to a dataframe:
+
+```{r}
+#if size.undergrad is less than 10,000, set size.category = "Small"
+maryland.college.df$size.category[maryland.college.df$size.undergrad < 10000] = "Small"
+#if size.undergrad is more than 10,000, set size.category = "Large"
+maryland.college.df$size.category[maryland.college.df$size.undergrad > 10000] = "Large"
+#print a table summarizing size.category
+table(maryland.college.df$size.category)
+```
+
+The `[]` symbols are typically used to select some subset of a variable or dataframe. Here, we used them to select rows within a dataframe based on a value of a variable in that row. (If this is too much code for you, don't worry -- you don't have to do a whole lot of this in R, for the most part!)
+
+Okay, now we're ready to make a two-way table. Let's start simple, first!
+
+```{r}
+#basic two-way table using the table() function
+table(maryland.college.df$type, maryland.college.df$size.category)
+```
+
+Sadly, `tab1()` is only for one-way tables, so it can't help us here. However, we can install a new package to help us out! Remember: just remove the `#` from in front of the following line of code and run the chunk once to install the `gmodels` package.
+
+```{r}
+#install.packages('gmodels')
+```
+
+
+```{r}
+library(gmodels)
+CrossTable(maryland.college.df$type, maryland.college.df$size.category,
+           expected=FALSE, 
+           prop.chisq=FALSE,
+           prop.t=FALSE, 
+           prop.r=TRUE, 
+           prop.c=FALSE)
+```
+
+With the current settings, the `CrossTable()` function takes the two categorical variables and shows us the relative frequencies by row. So, we can see that 100% of `Federal` colleges are `Small` and that 63.6% of `Public` colleges are `Small`. 
+
+We can add other relative frequencies to the `CrossTable()` function by switching other arguments to `TRUE`. Let's add all of the relative frequencies now!
+
+```{r}
+library(gmodels)
+CrossTable(maryland.college.df$type, maryland.college.df$size.category,
+           expected=FALSE, 
+           prop.chisq=FALSE,
+           prop.t=TRUE, 
+           prop.r=TRUE, 
+           prop.c=TRUE)
+```
+
+As shown in the order under the `Cell Contents` legend, we can see that each cell now contains the number of observations, the conditional frequency in the row, the conditional frequency in the column, and finally the proportion out of the total number of observations. 
