@@ -31,7 +31,7 @@ If you have questions, comments, or concerns about _AP Stats in R_, please feel 
 
 Each sub-section of a chapter has a tutorial document and also a downloadable RMarkdown (.rmd) file that you can open in R. If you do not have R installed, please see the tutorial [here](https://techvidvan.com/tutorials/install-r/). Please install BOTH R and RStudio as it will make your life significantly easier!
 
-1. Chapter 1: Exploring Data
+1. **Chapter 1: Exploring Data**
 	1. Analyzing Categorical Data
 		1. Conditional Counts & Total Counts ([tutorial](ch1/1.1.a)/[rmd](ch1/1.1.a.rmd))
 		2. Frequency Tables ([tutorial](ch1/1.1.b)/[rmd](ch1/1.1.b.rmd))
@@ -39,24 +39,24 @@ Each sub-section of a chapter has a tutorial document and also a downloadable RM
 		4. Segmented Bar Charts **<-- I am here**
 	2. Graphical Displays of Quantitative Data
 	3. Numerical Summaries of Quantitative Data
-2. Chapter 2: Modeling Distributions of Data
+2. **Chapter 2: Modeling Distributions of Data**
 	1. Describing Location in a Distribution
 	2. Normal Distributions
-3. Chapter 3: Describing Relationships
+3. **Chapter 3: Describing Relationships**
 	1. Scatterplots & Correlation
 	2. Least-Squares Regression
-8. Chapter 8: Confidence Intervals
+8. **Chapter 8: Confidence Intervals**
 	1. Estimating a Population Proportion
 	2. Estimating a Population Mean
-9. Chapter 9: Significance Testing
+9. **Chapter 9: Significance Testing**
 	1. Testing a Population Proportion
 	2. Testing a Population Mean
-10. Chapter 10: Comparing Two Populations or Groups
+10. **Chapter 10: Comparing Two Populations or Groups**
 	1. Comparing Two Proportions
 	2. Comparing Two Means
-11. Chapter 11: Chi-Square and Inference for Categorical Distributions
+11. **Chapter 11: Chi-Square and Inference for Categorical Distributions**
 	1. Chi-Square Goodness-of-Fit Tests
 	2. Inference for Relationships
-12. Chapter 12: More Regression Skills
+12. **Chapter 12: More Regression Skills**
 	1. Inference for Linear Regression
 	2. Transforming to Achieve Linearity
