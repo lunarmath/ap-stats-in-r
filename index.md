@@ -35,8 +35,8 @@ Each sub-section of a chapter has a tutorial document and also a downloadable RM
 	1. Analyzing Categorical Data
 		1. Conditional Counts & Total Counts ([tutorial](ch1/1.1.a)/[rmd](ch1/1.1.a.rmd))
 		2. Frequency Tables ([tutorial](ch1/1.1.b)/[rmd](ch1/1.1.b.rmd))
-		3. Pie Charts & Bar Charts **<-- I am here**
-		4. Segmented Bar Charts
+		3. Pie Charts & Bar Charts ([tutorial](ch1/1.1.c)/[rmd](ch1/1.1.c.rmd))
+		4. Segmented Bar Charts **<-- I am here**
 	2. Graphical Displays of Quantitative Data
 	3. Numerical Summaries of Quantitative Data
 2. Chapter 2: Modeling Distributions of Data
